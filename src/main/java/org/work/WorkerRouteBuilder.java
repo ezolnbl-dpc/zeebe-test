@@ -34,7 +34,8 @@ public class WorkerRouteBuilder extends RouteBuilder {
                                         .bpmnProcessId("Process_0k7bx2t")
                                         .latestVersion()
                                         .variables(variables)
-                                        .send();
+                                        .send()
+                                        .join();
 
                                 logger.info("zeebee workflow instance started");
                             }

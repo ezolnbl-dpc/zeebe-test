@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  zeebe-1:
+    image: camunda/zeebe:0.23.0-alpha2
+    ports:
+      - "26500:26500"
+    environment:
+            - ZEEBE_LOG_LEVEL=${ZEEBE_LOG_LEVEL:-info}
+            - ZEEBE_NODE_ID=0
+            - ZEEBE_PARTITIONS_COUNT=5
+            - ZEEBE_CLUSTER_SIZE=1
+            - ZEEBE_REPLICATION_FACTOR=1
+    volumes:
+        - /usr/local/zeebe1/data:/usr/local/zeebe/data
